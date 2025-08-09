@@ -1,7 +1,7 @@
-// Driver class containing partThree .. partSeven demos
+// Driver class containing partThree . partSeven demos
 public class AssignmentTwo {
 
-    public static void AssignmentTwo(String[] args) {
+    public static void main(String[] args) {
         AssignmentTwo a2 = new AssignmentTwo();
 
         // Call the parts one by one for an automated demo
