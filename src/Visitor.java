@@ -1,13 +1,14 @@
-// PART 1: Visitor extends Person
+// ************PART 1: Visitor extends Person
 public class Visitor extends Person {
-    // At least 2 instance variables for a theme park member/visitor
+
+    //Declaring 2 variables
     private String visitorId;
-    private String ticketType; // e.g., "Standard", "VIP"
+    private String ticketType; // For an example "Standard", "VIP"
 
     // Default constructor
     public Visitor() {}
 
-    // Full constructor (includes Person fields)
+    //Parametarized Constructor
     public Visitor(String firstName, String lastName, int age,
                    String visitorId, String ticketType) {
         super(firstName, lastName, age);
@@ -15,13 +16,14 @@ public class Visitor extends Person {
         this.ticketType = ticketType;
     }
 
-    // Getters & setters
+    // Getters & setters for the fields
     public String getVisitorId() { return visitorId; }
     public void setVisitorId(String visitorId) { this.visitorId = visitorId; }
 
     public String getTicketType() { return ticketType; }
     public void setTicketType(String ticketType) { this.ticketType = ticketType; }
 
+    //toString method to called when printing objects
     @Override
     public String toString() {
         return "Visitor{" + getFullName() + ", id=" + visitorId + ", ticket=" + ticketType + "}";
