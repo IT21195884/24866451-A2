@@ -1,16 +1,16 @@
-// PART 2: Interface to enforce required ride behaviours
+// Part 2 creating Interface
 public interface RideInterface {
-    // Queue-related
-    boolean addVisitorToQueue(Visitor v);
-    Visitor removeVisitorFromQueue(); // FIFO removal; returns removed visitor or null
-    void printQueue();
 
-    // Ride cycle
-    void runOneCycle();
+    boolean addVisitorToQueue(Visitor v);   //Method to add visitors to the queue
+    Visitor removeVisitorFromQueue(); //Removing visitor
+    void printQueue();       //Printing the queue
+
+    void runOneCycle();     //Method to run the cycle for one time
 
     // History-related (LinkedList)
-    boolean addVisitorToHistory(Visitor v);
-    boolean checkVisitorFromHistory(Visitor v);
+    boolean addVisitorToHistory(Visitor v);  //Using parameter of Visitor
+    boolean checkVisitorFromHistory(Visitor v);  //Using parameter of Visitor
+
     int numberOfVisitors();
     void printRideHistory();
 
