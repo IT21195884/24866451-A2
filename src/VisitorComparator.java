@@ -1,7 +1,10 @@
+
+//Part 4B - Sorting And Collection Using Comparator Interface
+// Part 4B Comparator using at least TWO fields
+
 import java.util.Comparator;
 
-// PART 4B: Comparator using at least TWO fields.
-// Here we sort by lastName, then firstName; if tied, VIP over Standard by ticketType.
+// Here we sort by lastName, then firstName; if tied sorted by  VIP over Standard by ticketType.
 public class VisitorComparator implements Comparator<Visitor> {
     @Override
     public int compare(Visitor a, Visitor b) {
