@@ -8,31 +8,38 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
-// PART 1, 2, 3, 4, 5, 6, 7: Core Ride class implementing the interface
+// Part 1 Creating Ride  Class
 public class Ride implements RideInterface {
-    // At least 3 instance variables suitable for a ride
+
+    // Declaring 4 variables
     private String rideName;
     private Employee operator;              // required to run
-    private int maxRider = 2;               // how many visitors per cycle (>=1)
-    private int numOfCycles = 0;            // count of cycles run
 
-    // Queue for waiting visitors (FIFO) - no max size
+    private int maxRider = 2;               // Part 5 -how many visitors per cycle
+    private int numOfCycles = 0;            // Part 5 - count of cycles run
+
+
+
+    //Part 3 - Creating Queue Interface
+    // Queue for waiting visitors - FIRST IN FIRST ONE
     private Queue<Visitor> waitingLine = new LinkedList<>();
 
-    // LinkedList for ride history (visitors who took the ride)
+    // LinkedList for ride history - visitors who took the ride
     private LinkedList<Visitor> rideHistory = new LinkedList<>();
+
+
 
     // Default constructor
     public Ride() {}
 
-    // Full constructor
+    // Parametarized Constructor
     public Ride(String rideName, Employee operator, int maxRider) {
         this.rideName = rideName;
         this.operator = operator;
         setMaxRider(maxRider);
     }
 
-    // Getters & setters
+    // Getters & setters for the fields
     public String getRideName() { return rideName; }
     public void setRideName(String rideName) { this.rideName = rideName; }
 
@@ -47,9 +54,12 @@ public class Ride implements RideInterface {
 
     public int getNumOfCycles() { return numOfCycles; }
 
-    /* =========================
-       Queue methods (Part 3)
-       ========================= */
+
+
+
+
+
+    //Part 3 - Creating Queue Methods with the RideInterface
 
     @Override
     public boolean addVisitorToQueue(Visitor v) {
@@ -86,9 +96,13 @@ public class Ride implements RideInterface {
         }
     }
 
-    /* ==================================
-       History methods (Part 4A)
-       ================================== */
+
+
+
+
+
+
+    //Part-4 Advanced Collection Creation
 
     @Override
     public boolean addVisitorToHistory(Visitor v) {
@@ -125,7 +139,7 @@ public class Ride implements RideInterface {
             System.out.println("(no one has taken the ride yet)");
             return;
         }
-        // REQUIRED: use an Iterator (as specified)
+        // REQUIRED - use an Iterator as specified
         Iterator<Visitor> it = rideHistory.iterator();
         int i = 0;
         while (it.hasNext()) {
@@ -133,15 +147,14 @@ public class Ride implements RideInterface {
         }
     }
 
-    // PART 4B: sort method using Comparator
+    // Part 4B method Creation for sorts the collection
     public void sortRideHistory(java.util.Comparator<Visitor> comparator) {
         Collections.sort(rideHistory, comparator);
         System.out.println("[OK] Ride history sorted.");
     }
 
-    /* ==========================
-       Run cycle (Part 5)
-       ========================== */
+
+
     @Override
     public void runOneCycle() {
         // Preconditions
@@ -167,11 +180,7 @@ public class Ride implements RideInterface {
         System.out.println("[DONE] Cycle complete. Total cycles run: " + numOfCycles);
     }
 
-    /* ==========================
-       File I/O (Part 6 & 7)
-       CSV format per line:
-       firstName,lastName,age,visitorId,ticketType
-       ========================== */
+    //Part 6 Writing to a File
 
     @Override
     public boolean exportRideHistory(String filePath) {
@@ -194,14 +203,16 @@ public class Ride implements RideInterface {
         }
     }
 
+    //Part 7 Reading from a file
+    //Debugged Using Gen AI Tools
     @Override
     public boolean importRideHistory(String filePath) {
         int imported = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = br.readLine()) != null) {
-                // Skip empty lines defensively
-                if (line.trim().isEmpty()) continue;
+
+                if (line.trim().isEmpty()) continue; // Skip empty lines
 
                 String[] parts = line.split(",", -1);
                 if (parts.length != 5) {
