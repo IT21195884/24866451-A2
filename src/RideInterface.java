@@ -1,4 +1,4 @@
-// Part 2 creating Interface
+// Part 2 -  creating the RideInterface
 public interface RideInterface {
 
     boolean addVisitorToQueue(Visitor v);   //Method to add visitors to the queue
