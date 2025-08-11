@@ -1,4 +1,4 @@
-// ************PART 1: Visitor extends Person
+// Part 1 - Creating Visitor class by extending Person Class
 public class Visitor extends Person {
 
     //Declaring 2 variables

@@ -1,5 +1,6 @@
-//************************** PART 1 & 2: Abstract base class (never directly instantiated)
-public abstract class Person {
+//Part 1 - Creating Person Class
+
+public abstract class Person {  //Part 2 - Making the class abstract as per the
 
     private String firstName;         //Declaring 3 variables
     private String lastName;

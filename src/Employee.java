@@ -1,4 +1,4 @@
-// **************PART 1: Employee extends Person
+// Part 1 - Creating Employee class by extending the Persons class
 public class Employee extends Person {
 
     private String employeeId;      //Declaring 2 variables
