@@ -1,10 +1,11 @@
 // Driver class containing partThree . partSeven demos
 public class AssignmentTwo {
 
+
+    //"In the AssignmentTwo class, add the following code" as per the assessment instruction
     public static void main(String[] args) {
         AssignmentTwo a2 = new AssignmentTwo();
 
-        // Call the parts one by one for an automated demo
         a2.partThree();
         a2.partFourA();
         a2.partFourB();
@@ -13,17 +14,21 @@ public class AssignmentTwo {
         a2.partSeven();
     }
 
-    // Helper: quick visitor maker
+
     private Visitor V(String fn, String ln, int age, String id, String ticket) {
         return new Visitor(fn, ln, age, id, ticket);
     }
 
+
+    //Part 3 - Creating partThree class and add 5 Visitors to the Queue
     public void partThree() {
-        System.out.println("\n=== PART 3: Queue demo ===");
+
+        System.out.println("\nPart 3 Demonstration");
+
         Employee op = new Employee("Ava", "Brown", 28, "E100", "Ride Operator");
         Ride ride = new Ride("Roller Coaster", op, 2);
 
-        // Add >= 5 visitors to queue
+        // Add  5 visitors to queue
         ride.addVisitorToQueue(V("Jack","Hill",22,"V001","Standard"));
         ride.addVisitorToQueue(V("Sharon","Ray",27,"V002","VIP"));
         ride.addVisitorToQueue(V("Benny","Stone",19,"V003","Standard"));
@@ -37,8 +42,11 @@ public class AssignmentTwo {
         ride.printQueue();
     }
 
+    //Part 4A Demonstration
+
     public void partFourA() {
-        System.out.println("\n=== PART 4A: History (LinkedList) demo ===");
+        System.out.println("\nPart 4A Demonstration");
+
         Ride ride = new Ride("Thunderstorm", new Employee("Tom","Ward",31,"E101","Ride Operator"), 4);
 
         // Add >= 5 visitors directly to history (simulating after ride taken)
@@ -65,7 +73,7 @@ public class AssignmentTwo {
     }
 
     public void partFourB() {
-        System.out.println("\n=== PART 4B: Sort history using Comparator demo ===");
+        System.out.println("\n Part 4B Demonstration");
         Ride ride = new Ride("Splash Wave", new Employee("Mia","Lee",33,"E102","Ride Operator"), 3);
 
         ride.addVisitorToHistory(V("Zack","Young",20,"V200","Standard"));
@@ -85,7 +93,7 @@ public class AssignmentTwo {
     }
 
     public void partFive() {
-        System.out.println("\n=== PART 5: Run one ride cycle demo ===");
+        System.out.println("\nPart 5 Demonstration");
         Ride ride = new Ride("Galaxy Drop",
                 new Employee("Ethan","Brooks",30,"E103","Ride Operator"), 4);
 
@@ -104,7 +112,7 @@ public class AssignmentTwo {
         System.out.println("Queue BEFORE cycle:");
         ride.printQueue();
 
-        // Run one cycle: removes up to maxRider from queue and adds to history
+        // Run one cycle: removes up to maxRider from queue and adding to history
         ride.runOneCycle();
 
         System.out.println("Queue AFTER 1 cycle:");
@@ -115,10 +123,9 @@ public class AssignmentTwo {
     }
 
     public void partSix() {
-        System.out.println("\n=== PART 6: Export ride history to file demo ===");
+        System.out.println("\nPart 6 Demonstration");
         Ride ride = new Ride("Comet Run", new Employee("Ivy","Park",29,"E104","Ride Operator"), 3);
 
-        // Add >= 5 visitors to history
         ride.addVisitorToHistory(V("Tom","Gray",28,"V400","Standard"));
         ride.addVisitorToHistory(V("Sherly","Black",26,"V401","VIP"));
         ride.addVisitorToHistory(V("Ben","White",23,"V402","Standard"));
@@ -130,7 +137,7 @@ public class AssignmentTwo {
     }
 
     public void partSeven() {
-        System.out.println("\n=== PART 7: Import ride history from file demo ===");
+        System.out.println("\nPart 7 Demonstration");
         Ride ride = new Ride("Comet Run (Restored)", null, 3);
 
         // Import previously exported file
